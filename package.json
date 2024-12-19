@@ -7,14 +7,27 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "eslint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore --fix pages components utils stores layouts composables",
+    "prettier": "prettier --write"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.9.0",
+    "element-plus": "^2.9.1",
     "nuxt": "^3.14.1592",
+    "pinia": "^2.3.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "sass": "^1.83.0"
+    "@element-plus/nuxt": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.18.1",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "vue-i18n": "^10.0.5"
   }
 }
