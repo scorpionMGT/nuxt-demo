@@ -36,9 +36,15 @@ importers:
       '@element-plus/nuxt':
         specifier: ^1.1.1
         version: 1.1.1(@element-plus/icons-vue@2.3.1(vue@3.5.13(typescript@5.7.2)))(element-plus@2.9.1(vue@3.5.13(typescript@5.7.2)))(magicast@0.3.5)(rollup@4.28.1)
+      '@eslint/js':
+        specifier: ^9.17.0
+        version: 9.17.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.18.1
         version: 8.18.1(@typescript-eslint/parser@8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
+      '@typescript-eslint/parser':
+        specifier: ^8.18.1
+        version: 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
       commitizen:
         specifier: ^4.3.1
         version: 4.3.1(@types/node@22.10.2)(typescript@5.7.2)
@@ -57,12 +63,18 @@ importers:
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.17.0(jiti@2.4.2))
+      eslint-define-config:
+        specifier: ^2.1.0
+        version: 2.1.0
       eslint-plugin-prettier:
         specifier: ^5.2.1
         version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2))(prettier@3.4.2)
       eslint-plugin-vue:
         specifier: ^9.32.0
         version: 9.32.0(eslint@9.17.0(jiti@2.4.2))
+      globals:
+        specifier: ^15.14.0
+        version: 15.14.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -75,6 +87,12 @@ importers:
       sass:
         specifier: ^1.83.0
         version: 1.83.0
+      typescript-eslint:
+        specifier: ^8.18.1
+        version: 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
+      vue-eslint-parser:
+        specifier: ^9.4.3
+        version: 9.4.3(eslint@9.17.0(jiti@2.4.2))
       vue-i18n:
         specifier: ^10.0.5
         version: 10.0.5(vue@3.5.13(typescript@5.7.2))
@@ -2003,6 +2021,10 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
+  eslint-define-config@2.1.0:
+    resolution: {integrity: sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
+
   eslint-plugin-prettier@5.2.1:
     resolution: {integrity: sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -2311,6 +2333,10 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+
+  globals@15.14.0:
+    resolution: {integrity: sha512-OkToC372DtlQeje9/zHIo5CT8lRP/FUgEOKBEhU4e0abL7J7CD24fD9ohiLN5hagG/kWCYj4K5oaxxtj2Z0Dig==}
     engines: {node: '>=18'}
 
   globby@14.0.2:
@@ -3856,6 +3882,13 @@ packages:
   type-fest@4.30.2:
     resolution: {integrity: sha512-UJShLPYi1aWqCdq9HycOL/gwsuqda1OISdBO3t8RlXQC4QvtuIz4b5FCfe2dQIWEpmlRExKmcTBfP1r9bhY7ig==}
     engines: {node: '>=16'}
+
+  typescript-eslint@8.18.1:
+    resolution: {integrity: sha512-Mlaw6yxuaDEPQvb/2Qwu3/TfgeBHy9iTJ3mTwe7OvpPmF6KPQjVOfGyEJpPv6Ez2C34OODChhXrzYw/9phI0MQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '>=4.8.4 <5.8.0'
 
   typescript@5.7.2:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
@@ -6394,6 +6427,8 @@ snapshots:
     dependencies:
       eslint: 9.17.0(jiti@2.4.2)
 
+  eslint-define-config@2.1.0: {}
+
   eslint-plugin-prettier@5.2.1(eslint-config-prettier@9.1.0(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2))(prettier@3.4.2):
     dependencies:
       eslint: 9.17.0(jiti@2.4.2)
@@ -6759,6 +6794,8 @@ snapshots:
       type-fest: 0.20.2
 
   globals@14.0.0: {}
+
+  globals@15.14.0: {}
 
   globby@14.0.2:
     dependencies:
@@ -8427,6 +8464,16 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-fest@4.30.2: {}
+
+  typescript-eslint@8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2):
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 8.18.1(@typescript-eslint/parser@8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
+      '@typescript-eslint/parser': 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
+      '@typescript-eslint/utils': 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
+      eslint: 9.17.0(jiti@2.4.2)
+      typescript: 5.7.2
+    transitivePeerDependencies:
+      - supports-color
 
   typescript@5.7.2: {}
 

@@ -1,28 +1,40 @@
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+
+/** @type {import('eslint').Linter.Config[]} */
 export default [
+  { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...pluginVue.configs['flat/essential'],
   {
-    languageOptions: {
-    parser: 'vue-eslint-parser',
-    parserOptions: {
-      parser: '@typescript-eslint/parser',
-      ecmaVersion: 2020,
-      sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true
-      }
+    files: ['**/*.vue'],
+    languageOptions: { parserOptions: { parser: tseslint.parser } },
+  },
+  {
+    rules: {
+      'prefer-const': 'error',
+      indent: ['error', 2], // 缩进使用 2 个空格
+      'linebreak-style': ['error', 'unix'], // 使用 Unix 风格的换行符
+      quotes: ['error', 'single'], // 使用单引号
+      semi: ['error', 'never'], // 语句末尾不加分号
     },
   },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'plugin:prettier/recommended'
-  ],
-  rules: {
-      "no-unused-vars": "error",
-      "no-undef": "error"
+  {
+    ignores: [
+      '.husky/',
+      '.nuxt/',
+      '.output/',
+      'node_modules/',
+      '.cz-config.js',
+      'package-lock.json',
+      '.gitignore',
+      '.prettierrc.js',
+      'tsconfig.json',
+      'commitlint.config.js',
+    ],
   },
-  ignores: ["node_modules/", ".nuxt/", ".output/", ".husky/", ".gitignore", ".cz-config.js", ".prettierrc.js", "commitlint.config.js", "package.json", "pnpm-lock.yaml"]
-  }
 ];
